@@ -95,7 +95,7 @@ Once the server is running, visit:
 - [x] Sprint 1: Project Setup & Basic Appointment API
 - [x] Sprint 2: Authentication & Role Management
 - [x] Sprint 3: Prescription & Admin Reporting
-- [ ] Sprint 4: Security & Deployment
+- [x] Sprint 4: Security & Deployment
 - [ ] Sprint 5: Microservice Architecture
 
 ## License

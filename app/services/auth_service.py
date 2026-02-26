@@ -6,6 +6,7 @@ from app.repositories.user_repository import UserRepository
 from app.schemas.auth_schema import UserRegister, UserLogin, Token
 from app.core.security import verify_password, get_password_hash, create_access_token
 from app.core.config import settings
+from app.utils.validators import validate_password_strength
 
 
 class AuthService:
@@ -13,6 +14,9 @@ class AuthService:
         self.repository = UserRepository(db)
     
     def register_user(self, user_data: UserRegister) -> User:
+        # Validate password strength
+        validate_password_strength(user_data.password)
+        
         # Check if user already exists
         existing_user = self.repository.get_by_email(user_data.email)
         if existing_user:
