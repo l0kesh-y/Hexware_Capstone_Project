@@ -21,6 +21,7 @@ A RESTful API for managing healthcare appointments and e-prescriptions built wit
 
 ## Project Structure
 
+### Monolithic Architecture (Sprint 1-4)
 ```
 healthcare-api/
 ├── app/
@@ -39,6 +40,25 @@ healthcare-api/
 ├── Dockerfile
 ├── docker-compose.yml
 └── requirements.txt
+```
+
+### Microservice Architecture (Sprint 5)
+```
+healthcare-api/
+├── microservices/
+│   ├── auth-service/
+│   │   ├── main.py
+│   │   ├── Dockerfile
+│   │   └── requirements.txt
+│   ├── appointment-service/
+│   │   ├── main.py
+│   │   ├── Dockerfile
+│   │   └── requirements.txt
+│   └── prescription-service/
+│       ├── main.py
+│       ├── Dockerfile
+│       └── requirements.txt
+└── docker-compose.microservices.yml
 ```
 
 ## Setup Instructions
@@ -80,15 +100,28 @@ uvicorn app.main:app --reload
 
 ### Docker Setup
 
+#### Monolithic Application
 ```bash
 docker-compose up --build
+```
+
+#### Microservices
+```bash
+docker-compose -f docker-compose.microservices.yml up --build
 ```
 
 ## API Documentation
 
 Once the server is running, visit:
+
+### Monolithic Application
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
+
+### Microservices
+- Auth Service: http://localhost:8001/docs
+- Appointment Service: http://localhost:8002/docs
+- Prescription Service: http://localhost:8003/docs
 
 ## Development Sprints
 
@@ -96,7 +129,7 @@ Once the server is running, visit:
 - [x] Sprint 2: Authentication & Role Management
 - [x] Sprint 3: Prescription & Admin Reporting
 - [x] Sprint 4: Security & Deployment
-- [ ] Sprint 5: Microservice Architecture
+- [x] Sprint 5: Microservice Architecture
 
 ## License
 
