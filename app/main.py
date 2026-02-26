@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.database import engine, Base
-from app.api.routes import appointments, auth, users
+from app.api.routes import appointments, auth, users, prescriptions, doctors, admin
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -25,11 +25,14 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(appointments.router)
+app.include_router(prescriptions.router)
+app.include_router(doctors.router)
+app.include_router(admin.router)
 
 
 @app.get("/")
 def root():
-    return {"message": "Healthcare API - Sprint 2: Authentication & Role Management"}
+    return {"message": "Healthcare API - Sprint 3: Prescription & Admin Reporting"}
 
 
 @app.get("/health")

@@ -11,6 +11,8 @@ from app.core.database import Base
 from app.core.config import settings
 from app.models.user import User
 from app.models.appointment import Appointment
+from app.models.prescription import Prescription
+from app.models.doctor_profile import DoctorProfile
 
 config = context.config
 config.set_main_option('sqlalchemy.url', settings.DATABASE_URL)
