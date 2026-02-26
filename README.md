@@ -93,7 +93,7 @@ Once the server is running, visit:
 ## Development Sprints
 
 - [x] Sprint 1: Project Setup & Basic Appointment API
-- [ ] Sprint 2: Authentication & Role Management
+- [x] Sprint 2: Authentication & Role Management
 - [ ] Sprint 3: Prescription & Admin Reporting
 - [ ] Sprint 4: Security & Deployment
 - [ ] Sprint 5: Microservice Architecture
