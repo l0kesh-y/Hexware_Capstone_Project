@@ -9,8 +9,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
     # Security settings
-    ALLOWED_HOSTS: list = ["*"]
-    CORS_ORIGINS: list = ["*"]
+    CORS_ORIGINS: str = "*"
     RATE_LIMIT_PER_MINUTE: int = 60
     
     # Logging
